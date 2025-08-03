@@ -11,5 +11,13 @@ namespace TasksForModul10
         static void Main(string[] args)
         {
         }
+
+        public interface IManager
+        {
+            void Create();
+            void Read();
+            void Update();
+            void Delete();
+        }
     }
 }
