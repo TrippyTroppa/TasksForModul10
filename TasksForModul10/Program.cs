@@ -16,35 +16,38 @@ namespace TasksForModul10
            
         }
 
-        public class FileManager : IWriter, IReader, IMailer
+        public class FileManager : ICreatable, IDeletable, IUpdatable
 
         {
-            public void Read()
+            public void Create()
             {
                 throw new NotImplementedException();
             }
 
-            public void SendMail()
+            public void Delete()
             {
                 throw new NotImplementedException();
             }
 
-            public void Write()
+            public void Update()
             {
                 throw new NotImplementedException();
             }
         }
     }
 
-    internal interface IMailer
+    public interface ICreatable
     {
+        void Create();
     }
 
-    internal interface IReader
+    public interface IDeletable
     {
+        void Delete();
     }
 
-    public interface IWriter
+    public interface IUpdatable
     {
+        void Update();
     }
 }
