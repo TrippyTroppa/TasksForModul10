@@ -11,34 +11,26 @@ namespace TasksForModul10
         static void Main(string[] args)
         {
             NewMessager newMessager = new NewMessager();
-            ((IWhatsApp)newMessager).SendMessage("Hello");
-            ((IViber)newMessager).SendMessage("Hello, world");
+            ((IWriter)newMessager).Write("Hello");
+           
         }
 
-        public class NewMessager : IViber, IWhatsApp
+        public class NewMessager : IWriter
         {
-            void IViber.SendMessage(string message)
+            void IWriter.Write(string message)
             {
                 Console.WriteLine("{0} : {1}", "Viber", message);
             }
 
-            void IWhatsApp.SendMessage(string message)
-            {
-                Console.WriteLine("{0} : {1}", "WhatsApp", message);
-            }
+            
         }
 
-        public interface IViber
+        public interface IWriter
         {
-            public void SendMessage (string message);
+            void Write(string message);
         }
 
-        public interface IWhatsApp
-        {
-            public void SendMessage(string message);
-        }
-
-        public void SendMessage(string message)
+        public void Write(string message)
         {
 
         }
