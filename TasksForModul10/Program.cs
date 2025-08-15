@@ -10,7 +10,9 @@ namespace TasksForModul10
     {
         static void Main(string[] args)
         {
-           
+           Worker worker = new Worker();
+            ((IWorker)worker).Build("Строим планы");
+
            
         }
 
@@ -18,7 +20,7 @@ namespace TasksForModul10
         {
             public void Build(string message)
             {
-                throw new NotImplementedException();
+                Console.WriteLine(message);
             }
         }
 
