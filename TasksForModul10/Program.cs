@@ -10,27 +10,24 @@ namespace TasksForModul10
     {
         static void Main(string[] args)
         {
-            NewMessager newMessager = new NewMessager();
-            ((IWriter)newMessager).Write("Hello");
+           
            
         }
 
-        public class NewMessager : IWriter
+        public class Worker : IWorker
         {
-            void IWriter.Write(string message)
+            public void Build(string message)
             {
-                Console.WriteLine("{0} : {1}", "Viber", message);
+                throw new NotImplementedException();
             }
-
-            
         }
 
-        public interface IWriter
+        public interface IWorker
         {
-            void Write(string message);
+            public void Build(string message);
         }
 
-        public void Write(string message)
+        public void Build(string message)
         {
 
         }
