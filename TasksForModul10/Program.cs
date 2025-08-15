@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,28 +11,40 @@ namespace TasksForModul10
     {
         static void Main(string[] args)
         {
-           Worker worker = new Worker();
-            ((IWorker)worker).Build("Строим планы");
+          
 
            
         }
 
-        public class Worker : IWorker
+        public class FileManager : IWriter, IReader, IMailer
+
         {
-            public void Build(string message)
+            public void Read()
             {
-                Console.WriteLine(message);
+                throw new NotImplementedException();
+            }
+
+            public void SendMail()
+            {
+                throw new NotImplementedException();
+            }
+
+            public void Write()
+            {
+                throw new NotImplementedException();
             }
         }
+    }
 
-        public interface IWorker
-        {
-            public void Build(string message);
-        }
+    internal interface IMailer
+    {
+    }
 
-        public void Build(string message)
-        {
+    internal interface IReader
+    {
+    }
 
-        }
+    public interface IWriter
+    {
     }
 }
