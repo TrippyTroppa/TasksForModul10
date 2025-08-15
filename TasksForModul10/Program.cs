@@ -16,38 +16,36 @@ namespace TasksForModul10
            
         }
 
-        public class FileManager : ICreatable, IDeletable, IUpdatable
+        public class FileManager : IBook, IDevice
 
         {
-            public void Create()
+          
+
+            public void Read()
             {
                 throw new NotImplementedException();
             }
 
-            public void Delete()
+            public void TurnOff()
             {
                 throw new NotImplementedException();
             }
 
-            public void Update()
+            public void TurnOn()
             {
                 throw new NotImplementedException();
             }
         }
     }
 
-    public interface ICreatable
+    public interface IBook
     {
-        void Create();
+        void Read();
     }
 
-    public interface IDeletable
+    public interface IDevice
     {
-        void Delete();
-    }
-
-    public interface IUpdatable
-    {
-        void Update();
+        void TurnOn();
+        void TurnOff();
     }
 }
