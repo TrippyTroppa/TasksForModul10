@@ -11,41 +11,39 @@ namespace TasksForModul10
     {
         static void Main(string[] args)
         {
-          
+          var user = new User();
+          var account = new Account();
 
-           
+            IUpdater<Account> updater = new UserService();
+
+            var userService = new UserService();
+            userService.Update(user);
+
+
         }
+  
+    }
 
-        public class FileManager : IBook, IDevice
-
+    public class UserService : IUpdater<User>
+    {
+        public void Update(User entity)
         {
-          
-
-            public void Read()
-            {
-                throw new NotImplementedException();
-            }
-
-            public void TurnOff()
-            {
-                throw new NotImplementedException();
-            }
-
-            public void TurnOn()
-            {
-                throw new NotImplementedException();
-            }
+            throw new NotImplementedException();
         }
+
     }
 
-    public interface IBook
+    public class User
     {
-        void Read();
+
     }
 
-    public interface IDevice
+    public class Account : User
     {
-        void TurnOn();
-        void TurnOff();
+
+    }
+    public interface IUpdater<in T>
+    {
+        void Update(T entity);
     }
 }
